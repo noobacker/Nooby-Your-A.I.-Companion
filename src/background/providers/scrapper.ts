@@ -42,57 +42,35 @@ class Scrapper {
 
       const response = await axios.get(`https://www.google.com/search?q=${question}`);
 
-      const html= await response.data;
+      const html = response.data;
 
-      // Create a DOMParser and parse the HTML
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, 'text/html');
+      // Extract titles, links, and snippets using regex (since DOMParser is unavailable in MV3 service workers)
+      const titles: string[] = [];
+      const links: string[] = [];
+      const snippets: string[] = [];
 
-      // Initialize arrays to store the scraped data
-      const titles: any = [];
-      const links: any = [];
-      const snippets: any = [];
-      const displayedLinks: any = [];
-
-      // Select elements representing search results
-      const resultElements = doc.querySelectorAll('.g');
-
-      // Loop through each search result and extract data
-      resultElements.forEach((resultElement: any) => {
-        const titleElement = resultElement.querySelector('.yuRUbf h3');
-        const linkElement = resultElement.querySelector('.yuRUbf a');
-        const snippetElement = resultElement.querySelector('.VwiC3b');
-        const displayedLinkElement = resultElement.querySelector('.yuRUbf .NJjxre .tjvcx');
-        const timeElement = resultElement.querySelector('.sL6Rbf');
-
-        if (titleElement) {
-          titles.push(titleElement.innerText);
+      // Regex to find search result blocks (very basic extraction)
+      const resultRegex = /<h3[^>]*>(.*?)<\/h3>.*?href="([^"]*?)"/g;
+      let match;
+      while ((match = resultRegex.exec(html)) !== null) {
+        const title = match[1].replace(/<[^>]*>?/gm, ''); // remove tags
+        const link = match[2];
+        if (title && link && !link.startsWith('/search')) {
+          titles.push(title);
+          links.push(link);
         }
+      }
 
-        if (linkElement) {
-          links.push(linkElement.getAttribute('href'));
-        }
-
-        if (snippetElement) {
-          snippets.push(snippetElement.innerText);
-        }
-
-        if (displayedLinkElement) {
-          displayedLinks.push(displayedLinkElement.innerText);
-        }
-
-        if (timeElement) {
-          console.log(timeElement.innerText);
-        }
-
-      });
+      const snippetRegex = /<div class="VwiC3b[^>]*>(.*?)<\/div>/g;
+      while ((match = snippetRegex.exec(html)) !== null) {
+        snippets.push(match[1].replace(/<[^>]*>?/gm, ''));
+      }
 
       // Format the scraped data as a single string
       const formattedResult = `
             Titles: ${titles.join('\n')}
             Links: ${links.join('\n')}
             Snippets: ${snippets.join('\n')}
-            Displayed Links: ${displayedLinks.join('\n')}
           `;
 
       return formattedResult;

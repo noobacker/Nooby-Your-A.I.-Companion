@@ -31,6 +31,7 @@ let buildConfig = {
   define: {
     'process.env.SUPABASE_URL': `"${process.env.SUPABASE_URL}"`,
     'process.env.SUPABASE_ANON_KEY': `"${process.env.SUPABASE_ANON_KEY}"`,
+    'process.env.GEMINI_API_KEY': `"${process.env.GEMINI_API_KEY}"`,
   },
   jsxFactory: 'h',
   jsxFragment: 'Fragment',
