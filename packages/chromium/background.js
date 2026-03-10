@@ -25,8 +25,6 @@ ChatGPT:`:t}buildMessages(t){return[{role:"user",content:t}]}async generateAnswe
 `)}
             Snippets: ${l.join(`
 `)}
-            Displayed Links: ${displayedLinks.join(`
-`)}
           `}catch(r){return""}}},fr=ir;var hf=new st("undefined"),bt=class{constructor(){this.model=hf.getGenerativeModel({model:"gemini-pro"})}async getLanguage(){return(await ae()).language}async rawGenerateAnswer(t){return(await this.model.generateContent(t)).response.text()}async promtBuilderForScraping(t,r){let o=new fr,n=`
     Convert this is one line(dont write any code) - `+t.filter(l=>l.sender==="user").map(l=>l.message).join(" ")+" "+r;return(await this.model.generateContent(n)).response.text()}async generateTalkativeAnswer(t,r,o=!1){let n=r;if(o){let l=new fr,c=await this.promtBuilderForScraping(t,r);n=await l.scrateData(c)+`
 [Previos Chats for context] : `+JSON.stringify(t)}else n="PROMPT - "+r+`
