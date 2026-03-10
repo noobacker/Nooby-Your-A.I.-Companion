@@ -1,4 +1,8 @@
-# Nooby - Your A.I. Companion 🤖
+# Noobackers - Nooby: Your A.I. Companion 🤖
+
+[![Nooby Preview](https://nobby.vercel.app/)](https://nobby.vercel.app/)
+
+**Live Demo:** [nobby.vercel.app](https://nobby.vercel.app/)
 
 Nooby is a powerful browser extension designed to enhance your web browsing experience with AI-driven insights, summaries, and conversational assistance. Built during 2023-24, it integrates multiple AI providers to give you the best possible answers directly in your browser.
 
