@@ -1,0 +1,17 @@
+.nooby--popup {
+  .nooby--chatgpt {
+    border: none;
+  }
+
+  .nooby--container #gpt-answer.markdown-body.gpt-markdown .nooby--chatgpt--header {
+    margin-top: 0 !important;
+  }
+}
+
+.nooby--popup--card {
+  // margin-top: 10px;
+
+  .content {
+    padding: 0 !important;
+  }
+}

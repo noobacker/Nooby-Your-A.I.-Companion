@@ -1,0 +1,45 @@
+.nooby--card {
+  .wrapper {
+    padding: 0 10px;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+.nooby--support__sites {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  max-width: 100vw;
+}
+
+.nooby--support__sites--item {
+  display: inline-flex;
+  margin: 0 0 10px !important;
+  width: 200px;
+  min-width: 200px;
+  justify-content: start !important;
+}
+
+.nooby--options {
+  padding-bottom: 30px;
+}
+
+.nooby--container {
+  width: 100%;
+  padding: 10px 15px;
+  max-width: 100vw;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+
+@media screen and (max-width: 900px) {
+  .nooby--w-\[900px\] {
+    max-width: 100%;
+  }
+
+  textarea {
+    max-width: 100%;
+    width: 100% !important;
+  }
+}
