@@ -85,12 +85,15 @@ Contributions are what make the open-source community such an amazing place to l
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## Credits ❤️
+## Credits and Attribution Notice ❤️
 
 Developed by **noobacker** - [noobacker.com](https://noobacker.com/)
 Built in **2023-24**
 
-Special thanks to the Google Deepmind team and the creators of Preact, Tailwind CSS, and esbuild.
+This project was originally developed by noobacker.
 
+You may use, modify, and distribute this software.  
+If you redistribute or publicly present this project or any derivative work, you must include credit to the original author:
+noobacker — https://noobacker.com
 ---
-*Nooby - Making the web smarter, one tab at a time.*
+*Nooby: Your A.I. Companion.*
