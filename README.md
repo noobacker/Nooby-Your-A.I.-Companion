@@ -92,8 +92,8 @@ Built in **2023-24**
 
 This project was originally developed by noobacker.
 
-You may use, modify, and distribute this software.  
-If you redistribute or publicly present this project or any derivative work, you must include credit to the original author:
-noobacker — https://noobacker.com
+- You may use, modify, and distribute this software.  
+- If you redistribute or publicly present this project or any derivative work, you must include credit to the original author: noobacker — https://noobacker.com
+
 ---
 *Nooby: Your A.I. Companion.*
