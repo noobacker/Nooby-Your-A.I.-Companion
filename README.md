@@ -1,7 +1,5 @@
 # Noobackers - Nooby: Your A.I. Companion 🤖
 
-[![Nooby Preview](https://nooby.noobacker.com/)](https://nooby.noobacker.com/)
-
 **Live Demo:** [nooby.noobacker.com](https://nooby.noobacker.com/)
 
 Nooby is a powerful browser extension designed to enhance your web browsing experience with AI-driven insights, summaries, and conversational assistance. Built during 2023-24, it integrates multiple AI providers to give you the best possible answers directly in your browser.
